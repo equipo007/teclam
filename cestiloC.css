@@ -1,0 +1,605 @@
+/* =========================
+   GENERAL
+========================= */
+body{
+    margin: 0;
+    padding: 0;
+    background: #031926;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.carrito-page{
+    padding-top: 120px;
+    padding-bottom: 50px;
+    width: 92%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+/* =========================
+   TITULOS
+========================= */
+.carrito-page h1{
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #7a5cff,
+        #4cc9f0,
+        #6d5dfc
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitulo{
+    text-align: center;
+    color: #cbd5e1;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+/* =========================
+   CONTENEDOR PRODUCTOS
+========================= */
+.contenedor-carrito{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* =========================
+   TARJETAS PRODUCTOS
+========================= */
+.producto-carrito{
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    background: linear-gradient(
+        160deg,
+        rgba(15,35,55,.95),
+        rgba(10,22,35,.95)
+    );
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35);
+
+    transition: .3s;
+}
+
+.producto-carrito:hover{
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 20px rgba(76,201,240,.25),
+        0 0 35px rgba(122,92,255,.25);
+}
+
+/* =========================
+   IMAGEN PRODUCTO
+========================= */
+.producto-carrito img{
+    width: 170px;
+    height: 170px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    background: #08131d;
+}
+
+/* =========================
+   INFO PRODUCTO
+========================= */
+.info-producto{
+    flex: 1;
+}
+
+.info-producto h3{
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 26px;
+    color: #f8fafc;
+}
+
+.precio{
+    font-size: 32px;
+    font-weight: bold;
+
+    color: #4cc9f0;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 15px rgba(76,201,240,.35);
+}
+
+/* =========================
+   BOTONES PRODUCTO
+========================= */
+.acciones{
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.acciones button{
+    border: none;
+    cursor: pointer;
+
+    transition: .3s;
+
+    font-weight: bold;
+}
+
+/* BOTON MENOS */
+.menos{
+    width: 52px;
+    height: 52px;
+
+    border-radius: 14px;
+
+    font-size: 28px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #ff4d6d,
+        #c9184a
+    );
+}
+
+.menos:hover{
+    transform: scale(1.08);
+}
+
+/* BOTON COMPRAR */
+.comprar{
+    padding: 0 28px;
+    height: 52px;
+
+    border-radius: 14px;
+
+    color: white;
+
+    font-size: 16px;
+
+    background: linear-gradient(
+        135deg,
+        #5f27cd,
+        #4361ee,
+        #4cc9f0
+    );
+
+    box-shadow:
+        0 0 18px rgba(76,201,240,.25);
+}
+
+.comprar:hover{
+    transform: scale(1.05);
+}
+
+/* BOTON MAS */
+.mas{
+    width: 52px;
+    height: 52px;
+
+    border-radius: 14px;
+
+    font-size: 28px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #38b000,
+        #70e000
+    );
+}
+
+.mas:hover{
+    transform: scale(1.08);
+}
+
+/* =========================
+   RESUMEN
+========================= */
+.resumen-carrito{
+    margin-top: 40px;
+
+    background: linear-gradient(
+        160deg,
+        rgba(15,35,55,.95),
+        rgba(10,22,35,.95)
+    );
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35);
+}
+
+/* TOTAL */
+.total-box{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.total-box h2{
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+.total-box h3{
+    font-size: 42px;
+
+    color: #4cc9f0;
+
+    margin: 0;
+
+    text-shadow:
+        0 0 18px rgba(76,201,240,.35);
+}
+
+/* =========================
+   BOTONES GENERALES
+========================= */
+.botones-carrito{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-vaciar,
+.btn-pagar{
+    border: none;
+    cursor: pointer;
+
+    padding: 15px 28px;
+
+    border-radius: 16px;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+/* VACIAR */
+.btn-vaciar{
+    background: linear-gradient(
+        135deg,
+        #ef233c,
+        #d90429
+    );
+}
+
+.btn-vaciar:hover{
+    transform: scale(1.05);
+}
+
+/* PAGAR */
+.btn-pagar{
+    background: linear-gradient(
+        135deg,
+        #5f27cd,
+        #4361ee,
+        #4cc9f0
+    );
+
+    box-shadow:
+        0 0 20px rgba(76,201,240,.25);
+}
+
+.btn-pagar:hover{
+    transform: scale(1.05);
+}
+
+/* =========================
+   CHECKOUT
+========================= */
+.checkout{
+    display: none;
+
+    margin-top: 40px;
+
+    background: linear-gradient(
+        160deg,
+        rgba(15,35,55,.95),
+        rgba(10,22,35,.95)
+    );
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35);
+}
+
+.checkout h2{
+    text-align: center;
+    margin-bottom: 25px;
+
+    color: #f8fafc;
+}
+
+/* FORMULARIO */
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.formulario input{
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    background: rgba(255,255,255,.05);
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+.formulario input::placeholder{
+    color: #94a3b8;
+}
+
+/* FILA */
+.fila{
+    display: flex;
+    gap: 15px;
+}
+
+/* BOTON CONFIRMAR */
+.btn-confirmar{
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        135deg,
+        #5f27cd,
+        #4361ee,
+        #4cc9f0
+    );
+
+    transition: .3s;
+}
+
+.btn-confirmar:hover{
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 20px rgba(76,201,240,.35);
+}
+
+/* =========================
+   CARRITO VACIO
+========================= */
+.carrito-vacio{
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background: linear-gradient(
+        160deg,
+        rgba(15,35,55,.95),
+        rgba(10,22,35,.95)
+    );
+
+    border-radius: 24px;
+}
+
+.carrito-vacio i{
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+    color: #4cc9f0;
+}
+
+.carrito-vacio h2{
+    color: #cbd5e1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer{
+    margin-top: 60px;
+    padding: 40px 20px;
+
+    background: rgba(0,0,0,.25);
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CONTENEDOR */
+.social-container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* BOTONES */
+.social-btn{
+    position: relative;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+    color: white;
+
+    overflow: hidden;
+
+    transition: .4s ease;
+
+    background: linear-gradient(
+        135deg,
+        #5f27cd,
+        #4361ee,
+        #4cc9f0
+    );
+
+    box-shadow:
+        0 0 15px rgba(67,97,238,.25);
+}
+
+/* ICONO */
+.social-btn i{
+    font-size: 22px;
+    min-width: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+/* TEXTO */
+.social-btn span{
+    white-space: nowrap;
+
+    opacity: 0;
+    max-width: 0;
+
+    transition: .4s;
+
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+/* HOVER */
+.social-btn:hover{
+    width: 180px;
+
+    justify-content: flex-start;
+
+    box-shadow:
+        0 0 20px rgba(76,201,240,.5),
+        0 0 35px rgba(95,39,205,.45);
+}
+
+.social-btn:hover span{
+    opacity: 1;
+    max-width: 120px;
+}
+
+/* EFECTOS */
+.facebook:hover{
+    background: linear-gradient(
+        135deg,
+        #1877f2,
+        #4cc9f0
+    );
+}
+
+.instagram:hover{
+    background: linear-gradient(
+        135deg,
+        #f72585,
+        #7209b7,
+        #4361ee
+    );
+}
+
+.whatsapp:hover{
+    background: linear-gradient(
+        135deg,
+        #00c853,
+        #00e676
+    );
+}
+
+/* COPYRIGHT */
+.copy{
+    margin-top: 25px;
+
+    color: #d1d5db;
+
+    font-size: 14px;
+}
+#contadorCarrito {
+
+    background: linear-gradient(
+        135deg,
+        #7f5cff,
+        #41d1ff
+    );
+
+    color: white;
+
+    border-radius: 50%;
+
+    padding: 3px 8px;
+
+    font-size: 12px;
+
+    margin-left: 5px;
+
+    display: inline-block;
+
+    font-weight: bold;
+
+    box-shadow: 0 0 12px rgba(65, 209, 255, 0.7);
+}

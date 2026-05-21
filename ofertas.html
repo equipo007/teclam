@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Ofertas de memorias RAM gaming y oficina en TecnoLam">
+
+    <title>Ofertas - TecnoLam</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="estiloO.css">
+    <link rel="stylesheet" href="estiloMenu.css">
+    <link rel="stylesheet" href="tecnolam.js">
+
+
+    <!-- ICONOS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     
+
+</head>
+
+<body>
+
+    <!-- =========================
+         MENU
+    ========================== -->
+    <nav class="navigation">
+
+        <div class="nav-content">
+
+            <!-- LOGO -->
+            <div class="left">
+
+                <div class="logo">
+
+                    <a href="inicio.html">
+
+                        <img src="logo2.png" alt="Logo TecnoLam">
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- MENU -->
+            <ul class="menu">
+
+                <li><a href="index.html">Inicio</a></li>
+
+                <li><a href="productos.html">Productos</a></li>
+
+                <li><a href="ofertas.html">Ofertas</a></li>
+
+                <li><a href="guia.html">Ayuda</a></li>
+
+                <!-- CARRITO -->
+                <li class="carrito-icono">
+
+                    <a href="carrito.html">
+
+                        🛒
+
+                        <span id="contadorCarrito">0</span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- =========================
+         OFERTAS
+    ========================== -->
+    <section class="ofertas">
+
+        <h2>🔥 Ofertas especiales</h2>
+
+        <!-- TEMPORIZADOR -->
+        <div id="contador-tiempo" class="temporizador"></div>
+
+        <!-- TARJETAS -->
+        <div class="contenedor-ofertas">
+
+            <!-- OFERTA 1 -->
+            <div class="oferta-card">
+
+                <div class="descuento">
+                    -30%
+                </div>
+
+                <img src="producto2.png" alt="RAM 8GB DDR3L">
+
+                <h3>RAM 8GB DDR3L</h3>
+
+                <p class="precio-antiguo">
+                    $841.30
+                </p>
+
+                <p class="precio-nuevo">
+                    $588.91
+                </p>
+
+                <button
+                    onclick="agregarCarrito('RAM 8GB DDR3L Oferta', 588.91)">
+
+                    Agregar
+
+                </button>
+
+            </div>
+
+            <!-- OFERTA 2 -->
+            <div class="oferta-card">
+
+                <div class="descuento">
+                    -20%
+                </div>
+
+                <img src="producto3.png" alt="RAM 4GB DDR4">
+
+                <h3>RAM 4GB DDR4</h3>
+
+                <p class="precio-antiguo">
+                    $158.95
+                </p>
+
+                <p class="precio-nuevo">
+                    $127.16
+                </p>
+
+                <button
+                    onclick="agregarCarrito('RAM 4GB DDR4 Oferta', 127.16)">
+
+                    Agregar
+
+                </button>
+
+            </div>
+
+            <!-- OFERTA 3 -->
+            <div class="oferta-card">
+
+                <div class="descuento">
+                    -15%
+                </div>
+
+                <img src="producto4.png" alt="RAM 64GB DDR5">
+
+                <h3>RAM 64GB DDR5</h3>
+
+                <p class="precio-antiguo">
+                    $6891.50
+                </p>
+
+                <p class="precio-nuevo">
+                    $5857.77
+                </p>
+
+                <button
+                    onclick="agregarCarrito('RAM 64GB DDR5 Oferta', 5857.77)">
+
+                    Agregar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+
+        <div class="social-container">
+
+            <!-- FACEBOOK -->
+            <a href="#" class="social-btn facebook">
+
+                <i class="fab fa-facebook-f"></i>
+
+                <span>Facebook</span>
+
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a href="#" class="social-btn instagram">
+
+                <i class="fab fa-instagram"></i>
+
+                <span>Instagram</span>
+
+            </a>
+
+            <!-- WHATSAPP -->
+            <a href="#" class="social-btn whatsapp">
+
+                <i class="fab fa-whatsapp"></i>
+
+                <span>WhatsApp</span>
+
+            </a>
+
+        </div>
+
+        <p class="copy">
+            © 2026 TecnoLam
+        </p>
+
+    </footer>
+
+    <!-- =========================
+         SCRIPT CARRITO
+    ========================== -->
+    <script>
+
+        // ARRAY DEL CARRITO
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+        // CONTADOR
+        let cantidadProductos = carrito.length;
+
+        // ELEMENTO HTML
+        const contadorElemento =
+            document.getElementById("contadorCarrito");
+
+        // ACTUALIZAR CONTADOR
+        actualizarContador();
+
+        // FUNCION AGREGAR
+        function agregarCarrito(nombre, precio) {
+
+            // CREAR PRODUCTO
+            const producto = {
+
+                nombre: nombre,
+                precio: precio
+
+            };
+
+            // AGREGAR AL ARRAY
+            carrito.push(producto);
+
+            // GUARDAR
+            localStorage.setItem(
+                "carrito",
+                JSON.stringify(carrito)
+            );
+
+            // AUMENTAR CONTADOR
+            cantidadProductos++;
+
+            actualizarContador();
+
+            alert(nombre + " agregado al carrito");
+
+        }
+
+        // ACTUALIZAR CONTADOR VISUAL
+        function actualizarContador() {
+
+            contadorElemento.textContent =
+                cantidadProductos;
+
+            if (cantidadProductos > 0) {
+
+                contadorElemento.style.display =
+                    "inline-block";
+
+            } else {
+
+                contadorElemento.style.display =
+                    "none";
+
+            }
+
+        }
+
+        // VACIAR CARRITO
+        function vaciarCarrito() {
+
+            carrito = [];
+
+            cantidadProductos = 0;
+
+            localStorage.removeItem("carrito");
+
+            actualizarContador();
+
+        }
+
+    </script>
+
+    <!-- =========================
+         TEMPORIZADOR
+    ========================== -->
+    <script>
+
+        let tiempoFinal =
+            new Date().getTime() +
+            (2 * 60 * 60 * 1000);
+
+        setInterval(() => {
+
+            let ahora =
+                new Date().getTime();
+
+            let restante =
+                tiempoFinal - ahora;
+
+            let horas = Math.floor(
+                restante / (1000 * 60 * 60)
+            );
+
+            let minutos = Math.floor(
+                (restante % (1000 * 60 * 60))
+                / (1000 * 60)
+            );
+
+            let segundos = Math.floor(
+                (restante % (1000 * 60))
+                / 1000
+            );
+
+            document.getElementById(
+                "contador-tiempo"
+            ).innerText =
+
+                `⏰ Termina en: ${horas}h ${minutos}m ${segundos}s`;
+
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>

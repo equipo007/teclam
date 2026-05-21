@@ -1,0 +1,419 @@
+/* =========================
+   GENERAL
+========================= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #031926;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.ofertas{
+    width: 100%;
+    padding-top: 110px;
+    padding-bottom: 60px;
+}
+
+/* =========================
+   TITULO PRINCIPAL
+========================= */
+.ofertas h2{
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 30px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    background: linear-gradient(
+        135deg,
+        #7a5cff,
+        #4cc9f0,
+        #6d5dfc
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 15px rgba(122,92,255,.45),
+        0 0 25px rgba(76,201,240,.35);
+}
+
+/* =========================
+   TEMPORIZADOR
+========================= */
+.temporizador{
+    width: 100%;
+    text-align: center;
+
+    padding: 18px 15px;
+    margin-bottom: 35px;
+
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #512da8,
+        #5e60ce,
+        #4cc9f0
+    );
+
+    box-shadow:
+        0 0 25px rgba(76,201,240,.25);
+
+    border-top: 1px solid rgba(255,255,255,.12);
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+/* =========================
+   CONTENEDOR TARJETAS
+========================= */
+.contenedor-ofertas{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    gap: 22px;
+
+    padding: 0 25px;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+.oferta-card{
+    position: relative;
+
+    width: 225px;
+
+    background: linear-gradient(
+        160deg,
+        rgba(16,35,55,.96),
+        rgba(7,20,32,.97)
+    );
+
+    border-radius: 20px;
+
+    padding: 15px;
+
+    overflow: hidden;
+
+    transition: .35s ease;
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.35);
+}
+
+.oferta-card:hover{
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 18px rgba(76,201,240,.20),
+        0 0 30px rgba(122,92,255,.18);
+}
+
+/* =========================
+   IMAGENES
+========================= */
+.oferta-card img{
+    width: 100%;
+    height: 175px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    transition: .35s;
+}
+
+.oferta-card:hover img{
+    transform: scale(1.03);
+}
+
+/* =========================
+   ETIQUETA DESCUENTO
+========================= */
+.descuento{
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #7028e4,
+        #5b5ff5,
+        #3bbcff
+    );
+
+    box-shadow:
+        0 0 15px rgba(91,95,245,.45),
+        0 0 22px rgba(59,188,255,.35);
+}
+
+/* =========================
+   TEXTOS
+========================= */
+.oferta-card h3{
+    text-align: center;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    margin-top: 16px;
+    margin-bottom: 10px;
+
+    color: #f4f7ff;
+}
+
+.precio-antiguo{
+    text-align: center;
+
+    color: #9aa7b7;
+
+    text-decoration: line-through;
+
+    margin-bottom: 6px;
+
+    font-size: 15px;
+}
+
+.precio-nuevo{
+    text-align: center;
+
+    font-size: 27px;
+    font-weight: 800;
+
+    margin-bottom: 16px;
+
+    color: #4cc9f0;
+
+    text-shadow:
+        0 0 10px rgba(76,201,240,.28);
+}
+
+/* =========================
+   BOTONES
+========================= */
+.oferta-card button{
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    border-radius: 14px;
+
+    padding: 12px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #5f27cd,
+        #4361ee,
+        #4cc9f0
+    );
+
+    transition: .3s ease;
+
+    box-shadow:
+        0 0 15px rgba(67,97,238,.28);
+}
+
+.oferta-card button:hover{
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 18px rgba(76,201,240,.38),
+        0 0 28px rgba(95,39,205,.38);
+}
+
+/* =========================
+   FOOTER
+========================= */
+/* =========================
+   FOOTER
+========================= */
+.footer{
+    margin-top: 60px;
+    padding: 40px 20px;
+
+    background: rgba(0,0,0,.25);
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CONTENEDOR */
+.social-container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* BOTONES */
+.social-btn{
+    position: relative;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+    color: white;
+
+    overflow: hidden;
+
+    transition: .4s ease;
+
+    background: linear-gradient(
+        135deg,
+        #5f27cd,
+        #4361ee,
+        #4cc9f0
+    );
+
+    box-shadow:
+        0 0 15px rgba(67,97,238,.25);
+}
+
+/* ICONO */
+.social-btn i{
+    font-size: 22px;
+    min-width: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+/* TEXTO */
+.social-btn span{
+    white-space: nowrap;
+
+    opacity: 0;
+    max-width: 0;
+
+    transition: .4s;
+
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+/* HOVER */
+.social-btn:hover{
+    width: 180px;
+
+    justify-content: flex-start;
+
+    box-shadow:
+        0 0 20px rgba(76,201,240,.5),
+        0 0 35px rgba(95,39,205,.45);
+}
+
+.social-btn:hover span{
+    opacity: 1;
+    max-width: 120px;
+}
+
+/* EFECTOS */
+.facebook:hover{
+    background: linear-gradient(
+        135deg,
+        #1877f2,
+        #4cc9f0
+    );
+}
+
+.instagram:hover{
+    background: linear-gradient(
+        135deg,
+        #f72585,
+        #7209b7,
+        #4361ee
+    );
+}
+
+.whatsapp:hover{
+    background: linear-gradient(
+        135deg,
+        #00c853,
+        #00e676
+    );
+}
+
+/* COPYRIGHT */
+.copy{
+    margin-top: 25px;
+
+    color: #d1d5db;
+
+    font-size: 14px;
+}
+#contadorCarrito {
+
+    background: linear-gradient(
+        135deg,
+        #7f5cff,
+        #41d1ff
+    );
+
+    color: white;
+
+    border-radius: 50%;
+
+    padding: 3px 8px;
+
+    font-size: 12px;
+
+    margin-left: 5px;
+
+    display: inline-block;
+
+    font-weight: bold;
+
+    box-shadow: 0 0 12px rgba(65, 209, 255, 0.7);
+}

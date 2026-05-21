@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* NAV PRINCIPAL */
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(3, 25, 38, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+/* CONTENIDO INTERNO */
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px; /* MÁS ESPACIO */
+}
+
+/* LOGO */
+.logo img {
+    height: 45px;
+}
+
+/* MENÚ */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* MÁS SEPARACIÓN */
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    position: relative;
+}
+
+/* LINKS */
+.menu li a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 17px;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+}
+
+/* HOVER EFECTO GLOW */
+.menu li a:hover {
+    color: #00d4ff;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.8);
+}
+
+/* LINEA ANIMADA ABAJO */
+.menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #00d4ff;
+    transition: width 0.3s ease;
+}
+
+.menu li a:hover::after {
+    width: 100%;
+}
+
+/* LINK ACTIVO */
+.menu li a.active {
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.9);
+}
+
+.menu li a.active::after {
+    width: 100%;
+}
+
+/* ESPACIO PARA QUE NO TAPE */
+.hero {
+    margin-top: 100px;
+}

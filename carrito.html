@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Carrito - TecnoLam</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="cestiloC.css">
+    <link rel="stylesheet" href="estiloMenu.css">
+    <link rel="stylesheet" href="tecnolam.js"
+
+    <!-- ICONOS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+     MENU
+========================= -->
+<nav class="navigation">
+
+    <div class="nav-content">
+
+        <div class="left">
+
+            <div class="logo">
+
+                <a href="inicio.html">
+
+                    <img src="logo2.png" alt="logo">
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <ul class="menu">
+
+            <li><a href="index.html">Inicio</a></li>
+
+            <li><a href="productos.html">Productos</a></li>
+
+            <li><a href="ofertas.html">Ofertas</a></li>
+
+            <li><a href="guia.html">Ayuda</a></li>
+
+            <!-- ICONO -->
+            <li class="carrito-icono">
+
+                <a href="carrito.html">
+
+                    🛒
+
+                    <span id="contadorCarrito">0</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+<!-- =========================
+     CARRITO
+========================= -->
+<section class="carrito-page">
+
+    <h1>
+        🛒 Tu carrito TecnoLam
+    </h1>
+
+    <p class="subtitulo">
+        Tus memorias RAM listas para comprar
+    </p>
+
+    <!-- PRODUCTOS -->
+    <div id="carrito-contenido"
+        class="contenedor-carrito">
+
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="resumen-carrito">
+
+        <div class="total-box">
+
+            <h2>Total</h2>
+
+            <h3>
+                $<span id="total">0</span> MXN
+            </h3>
+
+        </div>
+
+        <div class="botones-carrito">
+
+            <button class="btn-vaciar"
+                onclick="vaciarCarrito()">
+
+                <i class="fas fa-trash"></i>
+                Vaciar carrito
+
+            </button>
+
+            <button class="btn-pagar"
+                onclick="mostrarCheckout()">
+
+                <i class="fas fa-credit-card"></i>
+                Finalizar compra
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- CHECKOUT -->
+    <div id="checkout"
+        class="checkout">
+
+        <h2>
+            💳 Pago seguro
+        </h2>
+
+        <div class="formulario">
+
+            <input type="text"
+                placeholder="Nombre del titular">
+
+            <input type="text"
+                placeholder="Número de tarjeta">
+
+            <div class="fila">
+
+                <input type="text"
+                    placeholder="MM/AA">
+
+                <input type="text"
+                    placeholder="CVV">
+
+            </div>
+
+            <button class="btn-confirmar"
+                onclick="procesarPago()">
+
+                Confirmar pago
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+ <footer class="footer">
+
+        <div class="social-container">
+
+            <!-- FACEBOOK -->
+            <a href="#" class="social-btn facebook">
+
+                <i class="fab fa-facebook-f"></i>
+
+                <span>Facebook</span>
+
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a href="#" class="social-btn instagram">
+
+                <i class="fab fa-instagram"></i>
+
+                <span>Instagram</span>
+
+            </a>
+
+            <!-- WHATSAPP -->
+            <a href="#" class="social-btn whatsapp">
+
+                <i class="fab fa-whatsapp"></i>
+
+                <span>WhatsApp</span>
+
+            </a>
+
+        </div>
+
+        <p class="copy">
+            © 2026 TecnoLam
+        </p>
+
+    </footer>
+<!-- =========================
+     SCRIPT
+========================= -->
+<script>
+
+    // OBTENER CARRITO
+    let carrito =
+        JSON.parse(
+            localStorage.getItem("carrito")
+        ) || [];
+
+    // ELEMENTOS
+    const carritoContenido =
+        document.getElementById(
+            "carrito-contenido"
+        );
+
+    const totalElemento =
+        document.getElementById("total");
+
+    const contadorElemento =
+        document.getElementById(
+            "contadorCarrito"
+        );
+
+    // MOSTRAR PRODUCTOS
+    function mostrarCarrito() {
+
+        carritoContenido.innerHTML = "";
+
+        let total = 0;
+
+        contadorElemento.textContent =
+            carrito.length;
+
+        // SI ESTA VACIO
+        if(carrito.length === 0){
+
+            carritoContenido.innerHTML = `
+
+                <div class="carrito-vacio">
+
+                    <i class="fas fa-cart-shopping"></i>
+
+                    <h2>
+                        Tu carrito está vacío
+                    </h2>
+
+                </div>
+
+            `;
+
+            totalElemento.textContent = "0";
+
+            return;
+        }
+
+        // RECORRER PRODUCTOS
+        carrito.forEach((producto, index) => {
+
+            total += producto.precio;
+
+            carritoContenido.innerHTML += `
+
+                <div class="producto-carrito">
+
+                    <img
+                        src="${producto.imagen || 'producto01.jpg'}"
+                        alt="${producto.nombre}">
+
+                    <div class="info-producto">
+
+                        <h3>
+                            ${producto.nombre}
+                        </h3>
+
+                        <p class="precio">
+                            $${producto.precio}
+                        </p>
+
+                        <div class="acciones">
+
+                            <button
+                                class="menos"
+                                onclick="eliminarProducto(${index})">
+
+                                -
+
+                            </button>
+
+                            <button
+                                class="comprar">
+
+                                Comprar
+
+                            </button>
+
+                            <button
+                                class="mas"
+                                onclick="duplicarProducto(${index})">
+
+                                +
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+        });
+
+        totalElemento.textContent =
+            total.toFixed(2);
+
+    }
+
+    // ELIMINAR
+    function eliminarProducto(index){
+
+        carrito.splice(index, 1);
+
+        guardarCarrito();
+
+    }
+
+    // DUPLICAR
+    function duplicarProducto(index){
+
+        carrito.push(carrito[index]);
+
+        guardarCarrito();
+
+    }
+
+    // GUARDAR
+    function guardarCarrito(){
+
+        localStorage.setItem(
+            "carrito",
+            JSON.stringify(carrito)
+        );
+
+        mostrarCarrito();
+
+    }
+
+    // VACIAR
+    function vaciarCarrito(){
+
+        carrito = [];
+
+        guardarCarrito();
+
+    }
+
+    // MOSTRAR CHECKOUT
+    function mostrarCheckout(){
+
+        document.getElementById(
+            "checkout"
+        ).style.display = "block";
+
+        window.scrollTo({
+
+            top: document.body.scrollHeight,
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+    // PAGO
+    function procesarPago(){
+
+        alert(
+            "✅ Compra realizada correctamente"
+        );
+
+        vaciarCarrito();
+
+        document.getElementById(
+            "checkout"
+        ).style.display = "none";
+
+    }
+
+    // INICIAR
+    mostrarCarrito();
+
+</script>
+
+</body>
+
+</html>
