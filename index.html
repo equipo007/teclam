@@ -2,69 +2,47 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <title>TecnoLam - Memorias RAM</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Memorias RAM</title>
 
-    <link rel="stylesheet" href="estiloI.css">
-
+    <link rel="stylesheet" href="estiloP.css">
     <link rel="stylesheet" href="estiloMenu.css">
 
-    <!-- ICONOS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <script src="tecnolam.js"></script>
-
+    <!-- JS GLOBAL DEL CARRITO (IMPORTANTE) -->
+    <script src="tecnolam.js" defer></script>
 </head>
 
 <body>
 
-  <!-- MENU -->
+<!-- ========================= MENU ========================== -->
 <nav class="navigation">
 
     <div class="nav-content">
 
-        <!-- LOGO -->
         <div class="left">
-
             <div class="logo">
-
                 <a href="index.html">
-
-                    <img src="logo2.png" alt="logo">
-
+                    <img src="logo_ofi.png" alt="logo">
                 </a>
-
             </div>
-
         </div>
 
-        <!-- OPCIONES -->
         <ul class="menu">
 
-            <li><a href="inicio.html">Inicio</a></li>
-
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="productos.html">Productos</a></li>
-
             <li><a href="ofertas.html">Ofertas</a></li>
-
             <li><a href="guia.html">Ayuda</a></li>
 
-            <!-- ICONO CARRITO -->
             <li class="carrito-icono">
-
                 <a href="carrito.html">
-
                     🛒
-
                     <span id="contadorCarrito">0</span>
-
                 </a>
-
             </li>
 
         </ul>
@@ -73,109 +51,562 @@
 
 </nav>
 
-    <!-- HERO -->
-    <section class="hero">
 
-        <h2>TÚ MEJOR OPCIÓN</h2>
+    <!-- CONTENIDO -->
+    <div class="container">
 
-        <p>
-            Tecnología, rendimiento y calidad para tu computadora
-        </p>
+        <h1>Con TecnoLam todo se puede</h1>
 
-        <a href="productos.html" class="btn">
-            Ver productos
-        </a>
+        <h2>Catálogo de Memorias RAM</h2>
 
-    </section>
+        <div class="menu-productos">
 
-    <!-- DESTACADOS -->
-    <section class="destacados">
+            <!-- Producto 1 -->
+            <div class="producto">
+                <img src="producto01.jpg" alt="G.Skill">
+                <h3>Memoria RAM AMD de gama básica G.Skill</h3>
+                <div class="especificaciones">
+                    • Velocidad: 1333MHz<br>
+                    • Tipo: DDR3<br>
+                    • Ideal para tareas diarias (navegacion,ofimatica)
+                </div>
+                <div class="precio">$8630.00 MXN</div>
+                <button onclick="agregarCarrito('RAM AMD Básica', 8630.00)">
+                    Agregar
+                </button>
+            </div>
 
-        <h2>Productos destacados</h2>
+            <!-- Producto 2 -->
+            <div class="producto">
+                <img src="producto02.jpg" alt="Memoria Asgard Loki W3">
+                <h3>Memoria Asgard Loki W3 32GB</h3>
+                <div class="especificaciones">
+                    • Velocidad: Estandar<br>
+                    • Tipo: DDR4<br>
+                </div>
+                <div class="precio">$4315.00 MXN</div>
+                <button onclick="agregarCarrito('RAM 8GB DDR3L', 4315.00)">
+                    Agregar
+                </button>
+            </div>
 
-        <div class="cards">
+            <!-- Producto 3 -->
+            <div class="producto">
+                <img src="producto03.jpg" alt="Memoria Gloway Yi Pro">
+                <h3>Memoria Gloway Yi Pro 32GB</h3>
+                <div class="especificaciones">
+                    • Velocidad: Estandar<br>
+                    • Tipo: DDR4<br>
+                    • Para tareas diarias 
+                </div>
+                <div class="precio">$3452.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria Gloway Yi Pro', 3452.00)">
+                    Agregar
+                </button>
+            </div>
 
-            <!-- CARD 1 -->
-            <a href="productos.html" class="card">
+            <!-- Producto 4 -->
+            <div class="producto">
+                <img src="producto04.jpg" alt="Memoria RAM 32GB">
+                <h3>Memoria Colorful 32GB</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:32GB (Kit de 2x16GB)
+                    • Ideal para Gaming y edicion profesional 
+                </div>
+                <div class="precio">$2589.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM 32GB', 2589.00)">
+                    Agregar
+                </button>
+            </div>
 
-                <img src="producto2.png" alt="RAM 1">
+             <!-- Producto 5 -->
+            <div class="producto">
+                <img src="producto05.jpg" alt="Memoria RAM Gloway Yi Pro">
+                <h3>Memoria Gloway Yi Pro 32GB</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:32GB (Kit de 2x16GB)
+                    • Ideal para Gaming y edicion profesional 
+                </div>
+                <div class="precio">$3452.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Gloway Yi Pro', 3452.00)">
+                    Agregar
+                </button>
+            </div>
 
-                <h3>$3007 MX</h3>
+             <!-- Producto 6 -->
+            <div class="producto">
+                <img src="producto06.jpg" alt="Memoria RAM Kimtigo 32GB">
+                <h3>Memoria Kimtigo KF 32GB</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:32GB (Kit de 2x16GB)
+                    • Gama Alta
+                    • Ideal para Gaming y edicion profesional 
+                </div>
+                <div class="precio">$2171.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Kimtigo 32GB', 2171.00)">
+                    Agregar
+                </button>
+            </div>
 
-                <p>Alta velocidad para gaming</p>
+            <!-- Producto 7 -->
+            <div class="producto">
+                <img src="producto07.jpg" alt="Memoria RAM Netac Yueying 32GB">
+                <h3>Memoria Netac Yueying II 32GB</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:32GB (Kit de 2x16GB)
+                    • Gama Alta
+                    • Ideal para Gaming y edicion profesional 
+                </div>
+                <div class="precio">$1726.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Netac Yueying 32GB', 1726.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 8 -->
+            <div class="producto">
+                <img src="producto08.jpg" alt="Memoria RAM Juhor Xingwu 32GB">
+                <h3>Memoria Juhor Xingwu</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:32GB (Kit de 2x16GB)
+                    • Gama Alta
+                    • Ideal para Gaming y edicion profesional 
+                </div>
+                <div class="precio">$1553.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Juhor Xingwu 32GB', 1553.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 9 -->
+            <div class="producto">
+                <img src="producto09.jpg" alt="Memoria RAM ZhinXin 32GB">
+                <h3>Memoria RAM ZhinXin</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:32GB (Kit de 2x16GB)
+                    • Gama Alta
+                    • Ideal para Gaming y edicion profesional 
+                </div>
+                <div class="precio">$1381.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM ZhinXin 32GB', 1381.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 10 -->
+            <div class="producto">
+                <img src="producto010.jpg" alt="Memoria RAM POWEV 32GB">
+                <h3>Memoria RAM POWEV</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:32GB (Kit de 2x16GB)
+                    • Gama Alta
+                    • Ideal para Gaming y edicion profesional 
+                </div>
+                <div class="precio">$1208.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM POWEV 32GB', 1208.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 11 -->
+            <div class="producto">
+                <img src="producto011.jpg" alt="Memoria RAM Unis 32GB">
+                <h3>Memoria RAM Unis</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:32GB (Kit de 2x16GB)
+                    • Gama Alta
+                    • Ideal para Gaming y edicion profesional 
+                </div>
+                <div class="precio">$1136.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Unis 32GB', 1136.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 12 -->
+            <div class="producto">
+                <img src="producto012.jpg" alt="Memoria RAM G.Skill 16GB">
+                <h3>Memoria G.Skill Ripjaws V</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:16GB (Kit de 2x16GB)
+                    • Gama Alta
+                    • Ideal para Gaming y edicion profesional 
+                </div>
+                <div class="precio">$949.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM G.skill Ripjaws 16GB', 949.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 13 -->
+            <div class="producto">
+                <img src="producto013.jpg" alt="Memoria RAM 32GB">
+                <h3>Memoria RAM</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:32GB (Kit de 2x16GB)
+                    • Ideal para Gaming, edicion de video, diseño grafico, modelado 3D, programacion y multitarea pesada 
+                </div>
+                <div class="precio">$1136.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM 32GB', 1136.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 14 -->
+            <div class="producto">
+                <img src="producto014.jpg" alt="Memoria RAM Kimtigo KT">
+                <h3>Memoria RAM Kimtigo KT</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:16GB (Kit de 2X8GB)
+                    • Ideal para Gaming, edicion de video, diseño grafico, modelado 3D, programacion, multitarea pesada, streaming y oficina 
+                </div>
+                <div class="precio">$518.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Kimtigo KT', 518.00)">
+                    Agregar
+                </button>
+            </div>
+
+            <!-- Producto 15 -->
+            <div class="producto">
+                <img src="producto015.jpg" alt="Memoria RAM Netac N5">
+                <h3>Memoria RAM Netac N5</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:16GB (Kit de 2X8GB)
+                    • Ideal para oficina, educacion y uso diario general 
+                </div>
+                <div class="precio">$483.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Netac N5', 483.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 16 -->
+            <div class="producto">
+                <img src="producto016.jpg" alt="Memoria RAM JUHOR">
+                <h3>Memoria RAM JUHOR</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:16GB (Kit de 2X8GB)
+                    • Ideal para navegacion web, redes sociales y tareas escolares
+                </div>
+                <div class="precio">$432.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM JUHOR', 432.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 17 -->
+            <div class="producto">
+                <img src="producto017.jpg" alt="Memoria RAM ZhinXin">
+                <h3>Memoria RAM ZhinXin</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:16GB (Kit de 2X8GB)
+                    • Ideal para uso domestico basico, streaming y reproduccion de multimedia
+                </div>
+                <div class="precio">$380.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM ZhinXin', 380.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 18 -->
+            <div class="producto">
+                <img src="producto018.jpg" alt="Memoria RAM POWEV">
+                <h3>Memoria RAM POWEV</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:16GB (Kit de 2X8GB)
+                    • Ideal para Trabajo ligero, aplicaciones de oficina y almacenamiento en la nube
+                </div>
+                <div class="precio">$345.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM POWEV', 345.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 19 -->
+            <div class="producto">
+                <img src="producto019.jpg" alt="Memoria RAM G.Skill Aegis">
+                <h3>Memoria G.Skill Aegis</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad: 8GB
+                    • Ideal para juegos casuales, edicion de fotos basica y uso diario
+                </div>
+                <div class="precio">$293.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM G.Skill Aegis', 293.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 20 -->
+            <div class="producto">
+                <img src="producto020.jpg" alt="Memoria RAM Asgard">
+                <h3>Memoria RAM Asgard</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:8GB
+                    • Ideal para navegacion web y multitarea basica 
+                </div>
+                <div class="precio">$259.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Asgard', 259.00)">
+                    Agregar
+                </button>
+            </div>
+
+            <!-- Producto 21 -->
+            <div class="producto">
+                <img src="producto022.jpg" alt="Memoria RAM Gloway">
+                <h3>Memoria RAM Gloway</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:8GB
+                    • Ideal para uso diario, aplicaciones basicas y navegacion web
+                </div>
+                <div class="precio">$242.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Gloway', 242.00)">
+                    Agregar
+                </button>
+            </div>
+
+            <!-- Producto 22 -->
+            <div class="producto">
+                <img src="producto022.jpg" alt="Memoria RAM Colorful">
+                <h3>Memoria RAM Colorful</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:8GB
+                    • Ideal para tareas básicas, navegación web y uso diario
+                </div>
+                <div class="precio">$224.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Colorful', 224.00)">
+                    Agregar
+                </button>
+            </div>
+
+            <!-- Producto 23 -->
+            <div class="producto">
+                <img src="producto023.jpg" alt="Memoria RAM Kimtigo">
+                <h3>Memoria RAM Kimtigo</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:8GB
+                    • Ideal para tareas básicas, navegación web y uso diario
+                </div>
+                <div class="precio">$207.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Kimtigo', 207.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 24 -->
+            <div class="producto">
+                <img src="producto024.jpg" alt="Memoria RAM Netac">
+                <h3>Memoria RAM Netac</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:8GB
+                    • Ideal para tareas básicas, navegación web y uso diario
+                </div>
+                <div class="precio">$190.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Netac', 190.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 25 -->
+            <div class="producto">
+                <img src="producto025.jpg" alt="Memoria RAM Juhor">
+                <h3>Memoria RAM Juhor</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:8GB
+                    • Ideal para tareas básicas, navegación web y uso diario
+                </div>
+                <div class="precio">$173.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Juhor', 173.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 26 -->
+            <div class="producto">
+                <img src="producto026.jpg" alt="Memoria RAM POWEV">
+                <h3>Memoria RAM POWEV</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:8GB
+                    • Ideal para tareas básicas, navegación web y uso diario
+                </div>
+                <div class="precio">$138.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM POWEV', 138.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 29 -->
+            <div class="producto">
+                <img src="producto029.jpg" alt="Memoria RAM G.Skill">
+                <h3>Memoria RAM G.Skill</h3>
+                <div class="especificaciones">
+                    • Velocidad: 3200MHz<br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:8GB
+                    • Ideal para equipos antiguos, oficina y uso basico 
+                </div>
+                <div class="precio">$104.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM G.Skill', 104.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 30 -->
+            <div class="producto">
+                <img src="producto030.jpg" alt="Memoria RAM Asgard">
+                <h3>Memoria RAM Asgard</h3>
+                <div class="especificaciones">
+                    • Velocidad:<br>
+                    • Tipo: DDR3<br>
+                    • Capacidad:8GB
+                    • Ideal para uso basico y oficinas
+                </div>
+                <div class="precio">$224.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Asgard', 224.00)">
+                    Agregar
+                </button>
+            </div>
+
+             <!-- Producto 33 -->
+            <div class="producto">
+                <img src="producto033.jpg" alt="Memoria RAM Kimtigo">
+                <h3>Memoria RAM Kimtigo</h3>
+                <div class="especificaciones">
+                    • Velocidad: <br>
+                    • Tipo: DDR4<br>
+                    • Capacidad:4GB
+                    • Ideal para Servidores pequeños, monitoreo y equipos de seguridad
+
+                </div>
+                <div class="precio">$35.00 MXN</div>
+                <button onclick="agregarCarrito('Memoria RAM Kimtigo', 35.00)">
+                    Agregar
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+   <footer class="footer">
+
+        <div class="social-container">
+
+            <!-- FACEBOOK -->
+            <a href="https://www.facebook.com/share/1chqNySmWk/?mibextid=wwXIfr" class="social-btn facebook">
+
+                <i class="fab fa-facebook-f"></i>
+
+                <span>Facebook</span>
 
             </a>
 
-            <!-- CARD 2 -->
-            <a href="productos.html" class="card">
+            <!-- INSTAGRAM -->
+            <a href="https://www.instagram.com/tecnolam__?igsh=MXIydDY0czdjdnRvNw%3D%3D&utm_source=qr" class="social-btn instagram">
 
-                <img src="producto3.png" alt="RAM 2">
+                <i class="fab fa-instagram"></i>
 
-                <h3>$6891 MX</h3>
-
-                <p>Rendimiento extremo</p>
+                <span>Instagram</span>
 
             </a>
 
-            <!-- CARD 3 -->
-            <a href="productos.html" class="card">
+            <!-- X -->
+            <a href="https://x.com/TenNolamnad" class="social-btn x">
 
-                <img src="producto4.png" alt="RAM 3">
+                <i class="fab fa-X"></i>
 
-                <h3>$3007 MX</h3>
-
-                <p>Ideal para uso diario</p>
+                <span>X</span>
 
             </a>
 
         </div>
 
-    </section>
-
-    <!-- INFO -->
-    <section class="info">
-
-        <h3>¿Por qué elegir TecnoLam?</h3>
-
-        <p>
-            Ofrecemos productos de calidad,
-            precios accesibles y envíos rápidos
-            a todo el país.
+        <p class="copy">
+            © 2026 TecnoLam
         </p>
 
-    </section>
+    </footer>
 
-    <!-- FOOTER -->
-<footer class="footer">
+    <!-- SCRIPT -->
+    <script>
 
-    <div class="social-container">
+        // PRODUCTOS EN CARRITO
+        let cantidadProductos = 0;
 
-        <a href="" class="social-btn facebook">
+        // TOTAL
+        let totalCarrito = 0;
 
-            <i class="fab fa-facebook-f"></i>
+        // CONTADOR
+        const contadorElemento =
+            document.getElementById("contadorCarrito");
 
-            <span>Facebook</span>
+        // FUNCION
+        function agregarCarrito(nombre, precio) {
 
-        </a>
+            cantidadProductos++;
 
-        <a href="" class="social-btn instagram">
+            totalCarrito += precio;
 
-            <i class="fab fa-instagram"></i>
+            contadorElemento.textContent =
+                cantidadProductos;
 
-            <span>Instagram</span>
+            console.log("Producto:", nombre);
 
-        </a>
+            console.log("Precio:", precio);
 
-        <a href="" class="social-btn whatsapp">
+            console.log(
+                "Total:",
+                totalCarrito.toFixed(2)
+            );
+        }
 
-            <i class="fab fa-whatsapp"></i>
+    </script>
 
-            <span>WhatsApp</span>
+</body>
 
-        </a>
-
-    </div>
-
-    <p class="copy">© 2026 TecnoLam</p>
-
-</footer>
+</html>
