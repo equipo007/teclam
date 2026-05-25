@@ -19,37 +19,80 @@
 <body>
 
 <!-- ========================= MENU ========================== -->
-<nav class="navigation">
+<body>
 
-    <div class="nav-content">
+    <!-- MENU -->
+    <nav class="navigation">
 
-        <div class="left">
-            <div class="logo">
-                <a href="inicio.html">
-                    <img src="logo2.png" alt="logo">
-                </a>
+        <div class="nav-content">
+
+            <!-- LOGO -->
+            <a href="index.html"
+               class="logo">
+
+                <img src="lofo.png"
+         alt="TecnoLam">
+
+            </a>
+
+            <!-- BOTON HAMBURGUESA -->
+            <div class="menu-toggle"
+                 onclick="toggleMenu()">
+
+                ☰
+
             </div>
+
+            <!-- MENU -->
+            <ul class="menu"
+                id="menu">
+
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="productos.html">
+                        Productos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ofertas.html">
+                        Ofertas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="guia.html">
+                        Ayuda
+                    </a>
+                </li>
+
+                <li class="carrito-icono">
+
+                    <a href="carrito.html">
+
+                        🛒
+
+                        <span id="contadorCarrito">
+
+                            0
+
+                        </span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
         </div>
 
-        <ul class="menu">
+    </nav>
 
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="ofertas.html">Ofertas</a></li>
-            <li><a href="guia.html">Ayuda</a></li>
-
-            <li class="carrito-icono">
-                <a href="carrito.html">
-                    🛒
-                    <span id="contadorCarrito">0</span>
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-</nav>
 
 
     <!-- CONTENIDO -->
@@ -537,37 +580,51 @@
 
         <div class="social-container">
 
-            <!-- FACEBOOK -->
-            <a href="#" class="social-btn facebook">
+            <a href="https://www.facebook.com/share/1chqNySmWk/?mibextid=wwXIfr"
+               class="social-btn facebook">
 
                 <i class="fab fa-facebook-f"></i>
 
-                <span>Facebook</span>
+                <span>
+
+                    Facebook
+
+                </span>
 
             </a>
 
-            <!-- INSTAGRAM -->
-            <a href="#" class="social-btn instagram">
+            <a href="https://www.instagram.com/tecnolam__?igsh=MXIydDY0czdjdnRvNw%3D%3D&utm_source=qr"
+               class="social-btn instagram">
 
                 <i class="fab fa-instagram"></i>
 
-                <span>Instagram</span>
+                <span>
+
+                    Instagram
+
+                </span>
 
             </a>
 
-            <!-- WHATSAPP -->
-            <a href="#" class="social-btn whatsapp">
+            <a href="https://x.com/TenNolamnad"
+               class="social-btn x">
 
-                <i class="fab fa-whatsapp"></i>
+                <i class="fab fa-x"></i>
 
-                <span>WhatsApp</span>
+                <span>
+
+                    X
+
+                </span>
 
             </a>
 
         </div>
 
         <p class="copy">
+
             © 2026 TecnoLam
+
         </p>
 
     </footer>
