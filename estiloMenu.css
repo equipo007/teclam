@@ -6,83 +6,254 @@ body {
 
 /* NAV PRINCIPAL */
 .navigation {
+
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
+
     background: rgba(3, 25, 38, 0.95);
+
     backdrop-filter: blur(10px);
+
     z-index: 1000;
 }
 
-/* CONTENIDO INTERNO */
+/* CONTENIDO */
 .nav-content {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    padding: 20px 60px; /* MÁS ESPACIO */
+
+    padding: 20px 60px;
+}
+
+/* IZQUIERDA */
+.left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
 }
 
 /* LOGO */
-.logo img {
-    height: 45px;
+.logo {
+
+    display: flex;
+
+    align-items: center;
 }
 
-/* MENÚ */
+/* IMAGEN LOGO */
+.logo img {
+
+    height: 55px;
+
+    width: auto;
+
+    display: block;
+
+    transform: scale(1.15);
+}
+
+/* MENU */
 .menu {
+
     list-style: none;
+
     display: flex;
-    gap: 40px; /* MÁS SEPARACIÓN */
+
+    gap: 40px;
+
     margin: 0;
+
     padding: 0;
+
+    align-items: center;
 }
 
 .menu li {
+
     position: relative;
 }
 
 /* LINKS */
 .menu li a {
+
     text-decoration: none;
+
     color: #ccc;
+
     font-size: 17px;
-    transition: all 0.3s ease;
+
+    transition: all .3s ease;
+
     padding: 5px 0;
 }
 
-/* HOVER EFECTO GLOW */
+/* HOVER */
 .menu li a:hover {
+
     color: #00d4ff;
-    text-shadow: 0 0 8px rgba(0, 212, 255, 0.8);
+
+    text-shadow:
+        0 0 8px rgba(0,212,255,.8);
 }
 
-/* LINEA ANIMADA ABAJO */
+/* LINEA ABAJO */
 .menu li a::after {
+
     content: "";
+
     position: absolute;
+
     left: 0;
+
     bottom: -5px;
+
     width: 0%;
+
     height: 2px;
+
     background: #00d4ff;
-    transition: width 0.3s ease;
+
+    transition: width .3s ease;
 }
 
 .menu li a:hover::after {
+
     width: 100%;
 }
 
-/* LINK ACTIVO */
+/* ACTIVO */
 .menu li a.active {
+
     color: #00d4ff;
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.9);
+
+    text-shadow:
+        0 0 10px rgba(0,212,255,.9);
 }
 
 .menu li a.active::after {
+
     width: 100%;
 }
 
-/* ESPACIO PARA QUE NO TAPE */
+/* CONTADOR */
+#contadorCarrito {
+
+    background: linear-gradient(
+        135deg,
+        #7f5cff,
+        #41d1ff
+    );
+
+    color: white;
+
+    border-radius: 50%;
+
+    padding: 3px 8px;
+
+    font-size: 12px;
+
+    margin-left: 5px;
+
+    display: inline-block;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 12px rgba(65,209,255,.7);
+}
+
+/* BOTON HAMBURGUESA */
+.menu-toggle {
+
+    display: none;
+
+    font-size: 30px;
+
+    color: #00d4ff;
+
+    cursor: pointer;
+}
+
+/* HERO */
 .hero {
+
     margin-top: 100px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .nav-content {
+
+        padding: 18px 25px;
+    }
+
+    /* logo poquito más chico en celular */
+    .logo img {
+
+        height: 48px;
+
+        transform: scale(1.05);
+    }
+
+    .menu-toggle {
+
+        display: block;
+    }
+
+    .menu {
+
+        display: none;
+
+        position: absolute;
+
+        top: 80px;
+
+        right: 20px;
+
+        width: 220px;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 25px;
+
+        border-radius: 16px;
+
+        background: rgba(3, 25, 38, 0.97);
+
+        box-shadow:
+            0 10px 25px rgba(0,0,0,.35);
+    }
+
+    .menu.active {
+
+        display: flex;
+    }
+
+    .menu li {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .menu li a {
+
+        display: block;
+
+        width: 100%;
+    }
 }
