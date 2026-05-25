@@ -1,14 +1,14 @@
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 /* =========================
-   GUARDAR EN LOCALSTORAGE
+   GUARDAR
 ========================= */
 function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 /* =========================
-   SINCRONIZAR ENTRE PESTAÑAS
+   SINCRONIZAR
 ========================= */
 window.addEventListener("storage", (e) => {
     if (e.key === "carrito") {
@@ -19,22 +19,11 @@ window.addEventListener("storage", (e) => {
 });
 
 /* =========================
-   CONTADOR HEADER
-========================= */
-function actualizarCarrito() {
-    const contador = document.getElementById("contadorCarrito");
-    if (!contador) return;
-
-    const totalItems = carrito.reduce((acc, p) => acc + p.cantidad, 0);
-    contador.textContent = totalItems;
-}
-
-/* =========================
-   AGREGAR PRODUCTO
+   AGREGAR
 ========================= */
 function agregarCarrito(nombre, precio, imagen = "") {
 
-    precio = Number(precio); // 🔥 evita NaN
+    precio = Number(precio);
 
     let producto = carrito.find(p => p.nombre === nombre);
 
@@ -83,7 +72,7 @@ function cambiarCantidad(index, cambio) {
 }
 
 /* =========================
-   VACIAR CARRITO
+   VACÍAR
 ========================= */
 function vaciarCarrito() {
     carrito = [];
@@ -93,7 +82,7 @@ function vaciarCarrito() {
 }
 
 /* =========================
-   MENSAJE FLOTANTE
+   MENSAJE
 ========================= */
 function mostrarMensaje(texto) {
 
@@ -117,7 +106,7 @@ function mostrarMensaje(texto) {
 }
 
 /* =========================
-   MINI CARRITO HEADER
+   CONTADOR / MINI CARRITO
 ========================= */
 function actualizarCarrito() {
 
@@ -128,7 +117,8 @@ function actualizarCarrito() {
     let total = 0;
 
     if (contador) {
-        contador.textContent = carrito.reduce((acc, p) => acc + p.cantidad, 0);
+        contador.textContent =
+            carrito.reduce((acc, p) => acc + p.cantidad, 0);
     }
 
     if (lista && totalSpan) {
@@ -143,15 +133,11 @@ function actualizarCarrito() {
             lista.innerHTML += `
                 <div class="item-carrito">
 
-                    <div style="display:flex; gap:10px; align-items:center;">
+                    ${p.imagen ? `<img src="${p.imagen}" width="50">` : ""}
 
-                        ${p.imagen ? `<img src="${p.imagen}" width="50">` : ""}
-
-                        <div>
-                            <b>${p.nombre}</b><br>
-                            $${p.precio.toFixed(2)} x ${p.cantidad}
-                        </div>
-
+                    <div>
+                        <b>${p.nombre}</b><br>
+                        $${p.precio.toFixed(2)} x ${p.cantidad}
                     </div>
 
                     <div>
@@ -217,23 +203,15 @@ function mostrarCarritoPagina() {
 window.onload = () => {
     actualizarCarrito();
     mostrarCarritoPagina();
-};function toggleMenu(){
+};
 
-    document
-        .getElementById("menu")
-        .classList.toggle("activo");
-
-}function toggleMenu() {
-
-    document
-        .getElementById("menu")
-        .classList.toggle("activo");
-
-}
-
+/* =========================
+   MENU HAMBURGUESA
+========================= */
 function toggleMenu() {
 
     document
         .getElementById("menu")
-        .classList.toggle("active");
+        .classList
+        .toggle("active");
 }
