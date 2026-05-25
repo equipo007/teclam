@@ -1,259 +1,114 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-
 /* NAV PRINCIPAL */
 .navigation {
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
     background: rgba(3, 25, 38, 0.95);
-
     backdrop-filter: blur(10px);
-
     z-index: 1000;
 }
 
-/* CONTENIDO */
+/* CONTENIDO NAV */
 .nav-content {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 20px 60px;
-}
-
-/* IZQUIERDA */
-.left {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
+    position: relative; /* 🔥 IMPORTANTE */
 }
 
 /* LOGO */
-.logo {
-
-    display: flex;
-
-    align-items: center;
-}
-
-/* IMAGEN LOGO */
 .logo img {
-
     height: 55px;
-
     width: auto;
-
     display: block;
-
     transform: scale(1.15);
 }
 
-/* MENU */
+/* MENU NORMAL (PC) */
 .menu {
-
     list-style: none;
-
     display: flex;
-
     gap: 40px;
-
     margin: 0;
-
     padding: 0;
-
     align-items: center;
-}
-
-.menu li {
-
-    position: relative;
 }
 
 /* LINKS */
 .menu li a {
-
     text-decoration: none;
-
     color: #ccc;
-
     font-size: 17px;
-
     transition: all .3s ease;
-
     padding: 5px 0;
 }
 
 /* HOVER */
 .menu li a:hover {
-
     color: #00d4ff;
-
-    text-shadow:
-        0 0 8px rgba(0,212,255,.8);
 }
 
-/* LINEA ABAJO */
-.menu li a::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    bottom: -5px;
-
-    width: 0%;
-
-    height: 2px;
-
-    background: #00d4ff;
-
-    transition: width .3s ease;
-}
-
-.menu li a:hover::after {
-
-    width: 100%;
-}
-
-/* ACTIVO */
-.menu li a.active {
-
-    color: #00d4ff;
-
-    text-shadow:
-        0 0 10px rgba(0,212,255,.9);
-}
-
-.menu li a.active::after {
-
-    width: 100%;
-}
-
-/* CONTADOR */
-#contadorCarrito {
-
-    background: linear-gradient(
-        135deg,
-        #7f5cff,
-        #41d1ff
-    );
-
-    color: white;
-
-    border-radius: 50%;
-
-    padding: 3px 8px;
-
-    font-size: 12px;
-
-    margin-left: 5px;
-
-    display: inline-block;
-
-    font-weight: bold;
-
-    box-shadow:
-        0 0 12px rgba(65,209,255,.7);
-}
-
-/* BOTON HAMBURGUESA */
+/* BOTÓN HAMBURGUESA */
 .menu-toggle {
-
     display: none;
-
     font-size: 30px;
-
     color: #00d4ff;
-
     cursor: pointer;
+    position: relative;
+    z-index: 2000; /* 🔥 evita que se bloquee */
 }
 
-/* HERO */
-.hero {
-
-    margin-top: 100px;
-}
-
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
 
     .nav-content {
-
         padding: 18px 25px;
     }
 
-    /* logo poquito más chico en celular */
-    .logo img {
-
-        height: 48px;
-
-        transform: scale(1.05);
-    }
-
     .menu-toggle {
-
         display: block;
     }
 
+    /* MENÚ OCULTO POR DEFECTO */
     .menu {
-
-        display: none;
-
         position: absolute;
-
-        top: 80px;
-
+        top: 70px;
         right: 20px;
-
         width: 220px;
-
         flex-direction: column;
-
         gap: 18px;
-
         padding: 25px;
-
         border-radius: 16px;
-
         background: rgba(3, 25, 38, 0.97);
+        box-shadow: 0 10px 25px rgba(0,0,0,.35);
 
-        box-shadow:
-            0 10px 25px rgba(0,0,0,.35);
+        /* 🔥 MÁS ESTABLE EN ANDROID */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: 0.25s ease;
+        pointer-events: none;
     }
 
+    /* MENÚ ACTIVO */
     .menu.active {
-
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
     .menu li {
-
-        width: 100%;
-
         text-align: center;
+        width: 100%;
     }
 
     .menu li a {
-
         display: block;
-
         width: 100%;
     }
 }
