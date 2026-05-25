@@ -217,4 +217,23 @@ function mostrarCarritoPagina() {
 window.onload = () => {
     actualizarCarrito();
     mostrarCarritoPagina();
-};
+};function toggleMenu(){
+
+    document
+        .getElementById("menu")
+        .classList.toggle("activo");
+
+}function toggleMenu() {
+
+    document
+        .getElementById("menu")
+        .classList.toggle("activo");
+
+}
+
+function toggleMenu() {
+
+    document
+        .getElementById("menu")
+        .classList.toggle("active");
+}
