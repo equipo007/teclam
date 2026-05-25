@@ -5,7 +5,8 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Guía - TecnoLam</title>
 
@@ -17,249 +18,274 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- JS MENU -->
+    <script src="tecnolam.js" defer></script>
+
 </head>
 
 <body>
 
-<!-- =========================
-        MENU
-========================= -->
-<nav class="navigation">
+    <!-- MENU -->
+    <nav class="navigation">
 
-    <div class="nav-content">
+        <div class="nav-content">
 
-        <div class="left">
+            <!-- LOGO -->
+            <a href="index.html"
+               class="logo">
 
-            <div class="logo">
+                <img src="lofo.png"
+                     alt="TecnoLam">
 
-                <a href="inicio.html">
+            </a>
 
-                    <img src="logo2.png" alt="logo">
+            <!-- BOTON HAMBURGUESA -->
+            <div class="menu-toggle"
+                 onclick="toggleMenu()">
 
-                </a>
+                ☰
 
             </div>
 
+            <!-- MENU -->
+            <ul class="menu"
+                id="menu">
+
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="productos.html">
+                        Productos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ofertas.html">
+                        Ofertas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="guia.html">
+                        Ayuda
+                    </a>
+                </li>
+
+                <li class="carrito-icono">
+
+                    <a href="carrito.html">
+
+                        🛒
+
+                        <span id="contadorCarrito">
+
+                            0
+
+                        </span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
         </div>
 
-        <ul class="menu">
+    </nav>
 
-            <li><a href="index.html">Inicio</a></li>
+    <!-- HERO -->
+    <section class="hero-guia">
 
-            <li><a href="productos.html">Productos</a></li>
+        <div class="hero-texto">
 
-            <li><a href="ofertas.html">Ofertas</a></li>
-
-            <li><a href="guia.html">Ayuda</a></li>
-
-            <!-- CARRITO -->
-            <li class="carrito-icono">
-
-                <a href="carrito.html">
-
-                    🛒
-
-                    <span id="contadorCarrito">0</span>
-
-                </a>
-
-            </li>
-
-        </ul>
-
-    </div>
-
-</nav>
-
-<!-- =========================
-        HERO
-========================= -->
-<section class="hero-guia">
-
-    
-
-    <div class="hero-texto">
-
-        <h1>Centro de Ayuda TecnoLam</h1>
-
-        <p>
-            Aprende a elegir, instalar y aprovechar
-            tu memoria RAM correctamente.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- =========================
-        GUIA
-========================= -->
-<section class="guia">
-
-    <h2>📘 Guía rápida de memorias RAM</h2>
-
-    <div class="contenedor-guia">
-
-        <!-- BLOQUE -->
-        <div class="bloque">
-
-            <i class="fa-solid fa-memory"></i>
-
-            <h3>¿Qué es la RAM?</h3>
+            <h1>Centro de Ayuda TecnoLam</h1>
 
             <p>
-                La RAM ayuda a que los programas,
-                juegos y aplicaciones funcionen más rápido.
+                Aprende a elegir, instalar y aprovechar
+                tu memoria RAM correctamente.
             </p>
 
         </div>
 
-        <!-- BLOQUE -->
-        <div class="bloque">
+    </section>
 
-            <i class="fa-solid fa-microchip"></i>
+    <!-- GUIA -->
+    <section class="guia">
 
-            <h3>¿Cuánta necesitas?</h3>
+        <h2>📘 Guía rápida de memorias RAM</h2>
 
-            <ul>
+        <div class="contenedor-guia">
 
-                <li>4GB - Uso básico</li>
+            <!-- BLOQUE -->
+            <div class="bloque">
 
-                <li>8GB - Oficina y escuela</li>
+                <i class="fa-solid fa-memory"></i>
 
-                <li>16GB - Gaming</li>
-
-                <li>32GB+ - Edición y streaming</li>
-
-            </ul>
-
-        </div>
-
-        <!-- BLOQUE -->
-        <div class="bloque">
-
-            <i class="fa-solid fa-bolt"></i>
-
-            <h3>Tipos de RAM</h3>
-
-            <ul>
-
-                <li>DDR3 → Antigua</li>
-
-                <li>DDR4 → Actual</li>
-
-                <li>DDR5 → Más rápida</li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================
-        VIDEOS
-========================= -->
-<section class="videos">
-
-    <h2>🎥 Tutoriales de instalación</h2>
-
-    <div class="contenedor-videos">
-
-        <!-- VIDEO 1 -->
-        <div class="video-card">
-
-            <a href="https://youtu.be/pGU79lvXQiw"
-                target="_blank">
-
-                <img
-                    src="https://img.youtube.com/vi/pGU79lvXQiw/maxresdefault.jpg"
-                    alt="Instalar RAM PC">
-
-            </a>
-
-            <div class="video-info">
-
-                <h3>Instalar RAM en PC</h3>
+                <h3>¿Qué es la RAM?</h3>
 
                 <p>
-                    Aprende cómo colocar memoria RAM
-                    correctamente en una computadora.
+                    La RAM ayuda a que los programas,
+                    juegos y aplicaciones funcionen más rápido.
                 </p>
+
+            </div>
+
+            <!-- BLOQUE -->
+            <div class="bloque">
+
+                <i class="fa-solid fa-microchip"></i>
+
+                <h3>¿Cuánta necesitas?</h3>
+
+                <ul>
+
+                    <li>4GB - Uso básico</li>
+
+                    <li>8GB - Oficina y escuela</li>
+
+                    <li>16GB - Gaming</li>
+
+                    <li>32GB+ - Edición y streaming</li>
+
+                </ul>
+
+            </div>
+
+            <!-- BLOQUE -->
+            <div class="bloque">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>Tipos de RAM</h3>
+
+                <ul>
+
+                    <li>DDR3 → Antigua</li>
+
+                    <li>DDR4 → Actual</li>
+
+                    <li>DDR5 → Más rápida</li>
+
+                </ul>
 
             </div>
 
         </div>
 
-        <!-- VIDEO 2 -->
-        <div class="video-card">
+    </section>
 
-            <a href="https://youtu.be/rFFj4FPsJ-g"
-                target="_blank">
+    <!-- VIDEOS -->
+    <section class="videos">
 
-                <img
-                    src="https://img.youtube.com/vi/rFFj4FPsJ-g/maxresdefault.jpg"
-                    alt="Instalar RAM Laptop">
+        <h2>🎥 Tutoriales de instalación</h2>
 
-            </a>
+        <div class="contenedor-videos">
 
-            <div class="video-info">
+            <!-- VIDEO 1 -->
+            <div class="video-card">
 
-                <h3>Instalar RAM en Laptop</h3>
+                <a href="https://youtu.be/pGU79lvXQiw"
+                   target="_blank">
 
-                <p>
-                    Tutorial rápido para instalar RAM
-                    en laptops paso a paso.
-                </p>
+                    <img
+                        src="https://img.youtube.com/vi/pGU79lvXQiw/maxresdefault.jpg"
+                        alt="Instalar RAM PC">
+
+                </a>
+
+                <div class="video-info">
+
+                    <h3>Instalar RAM en PC</h3>
+
+                    <p>
+                        Aprende cómo colocar memoria RAM
+                        correctamente en una computadora.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- VIDEO 2 -->
+            <div class="video-card">
+
+                <a href="https://youtu.be/rFFj4FPsJ-g"
+                   target="_blank">
+
+                    <img
+                        src="https://img.youtube.com/vi/rFFj4FPsJ-g/maxresdefault.jpg"
+                        alt="Instalar RAM Laptop">
+
+                </a>
+
+                <div class="video-info">
+
+                    <h3>Instalar RAM en Laptop</h3>
+
+                    <p>
+                        Tutorial rápido para instalar RAM
+                        en laptops paso a paso.
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- FOOTER -->
+    <footer class="footer">
 
-<!-- =========================
-        FOOTER
-========================= -->
-<footer class="footer">
+        <div class="social-container">
 
-    <div class="social-container">
+            <a href="https://www.facebook.com/share/1chqNySmWk/?mibextid=wwXIfr"
+               class="social-btn facebook">
 
-        <a href="#" class="social-btn facebook">
+                <i class="fab fa-facebook-f"></i>
 
-            <i class="fab fa-facebook-f"></i>
+                <span>
+                    Facebook
+                </span>
 
-            <span>Facebook</span>
+            </a>
 
-        </a>
+            <a href="https://www.instagram.com/tecnolam__?igsh=MXIydDY0czdjdnRvNw%3D%3D&utm_source=qr"
+               class="social-btn instagram">
 
-        <a href="#" class="social-btn instagram">
+                <i class="fab fa-instagram"></i>
 
-            <i class="fab fa-instagram"></i>
+                <span>
+                    Instagram
+                </span>
 
-            <span>Instagram</span>
+            </a>
 
-        </a>
+            <a href="https://x.com/TenNolamnad"
+               class="social-btn x">
 
-        <a href="#" class="social-btn whatsapp">
+                <i class="fab fa-x"></i>
 
-            <i class="fab fa-whatsapp"></i>
+                <span>
+                    X
+                </span>
 
-            <span>WhatsApp</span>
+            </a>
 
-        </a>
+        </div>
 
-    </div>
+        <p class="copy">
 
-    <p class="copy">
-        © 2026 TecnoLam
-    </p>
+            © 2026 TecnoLam
 
-</footer>
+        </p>
+
+    </footer>
 
 </body>
-
 </html>
