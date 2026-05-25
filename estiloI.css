@@ -66,17 +66,22 @@ body {
     gap: 10px;
 }
 
-/* LOGO */
 .logo {
 
-    font-size: 24px;
+    display: flex;
 
-    font-weight: bold;
+    align-items: center;
 }
 
 .logo img {
 
-    width: 105px;
+    height: 150px;
+
+    width: 100px;
+
+    display: block;
+
+    transform: scale(1.15);
 }
 
 /* MENU */
