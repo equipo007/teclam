@@ -5,15 +5,13 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Carrito - TecnoLam</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="cestiloC.css">
     <link rel="stylesheet" href="estiloMenu.css">
-    <link rel="stylesheet" href="tecnolam.js"
 
     <!-- ICONOS -->
     <link rel="stylesheet"
@@ -23,384 +21,246 @@
 
 <body>
 
-<!-- =========================
-     MENU
-========================= -->
-<nav class="navigation">
+    <!-- MENU -->
+    <nav class="navigation">
 
-    <div class="nav-content">
+        <div class="nav-content">
 
-        <div class="left">
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
 
-            <div class="logo">
+                <img src="lofo.png" alt="TecnoLam">
 
-                <a href="inicio.html">
+            </a>
 
-                    <img src="logo2.png" alt="logo">
+            <!-- BOTON HAMBURGUESA -->
+            <div class="menu-toggle" onclick="toggleMenu()">
 
-                </a>
+                ☰
 
             </div>
 
-        </div>
+            <!-- MENU -->
+            <ul class="menu" id="menu">
 
-        <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="guia.html">Ayuda</a></li>
 
-            <li><a href="index.html">Inicio</a></li>
+                <li class="carrito-icono">
 
-            <li><a href="productos.html">Productos</a></li>
+                    <a href="carrito.html">
 
-            <li><a href="ofertas.html">Ofertas</a></li>
+                        🛒
 
-            <li><a href="guia.html">Ayuda</a></li>
+                        <span id="contadorCarrito">0</span>
 
-            <!-- ICONO -->
-            <li class="carrito-icono">
+                    </a>
 
-                <a href="carrito.html">
+                </li>
 
-                    🛒
-
-                    <span id="contadorCarrito">0</span>
-
-                </a>
-
-            </li>
-
-        </ul>
-
-    </div>
-
-</nav>
-
-<!-- =========================
-     CARRITO
-========================= -->
-<section class="carrito-page">
-
-    <h1>
-        🛒 Tu carrito TecnoLam
-    </h1>
-
-    <p class="subtitulo">
-        Tus memorias RAM listas para comprar
-    </p>
-
-    <!-- PRODUCTOS -->
-    <div id="carrito-contenido"
-        class="contenedor-carrito">
-
-    </div>
-
-    <!-- RESUMEN -->
-    <div class="resumen-carrito">
-
-        <div class="total-box">
-
-            <h2>Total</h2>
-
-            <h3>
-                $<span id="total">0</span> MXN
-            </h3>
+            </ul>
 
         </div>
 
-        <div class="botones-carrito">
+    </nav>
 
-            <button class="btn-vaciar"
-                onclick="vaciarCarrito()">
+    <!-- =========================
+         CARRITO
+    ========================== -->
+    <section class="carrito-page">
 
-                <i class="fas fa-trash"></i>
-                Vaciar carrito
+        <h1>🛒 Tu carrito TecnoLam</h1>
 
-            </button>
-
-            <button class="btn-pagar"
-                onclick="mostrarCheckout()">
-
-                <i class="fas fa-credit-card"></i>
-                Finalizar compra
-
-            </button>
-
-        </div>
-
-    </div>
-
-    <!-- CHECKOUT -->
-    <div id="checkout"
-        class="checkout">
-
-        <h2>
-            💳 Pago seguro
-        </h2>
-
-        <div class="formulario">
-
-            <input type="text"
-                placeholder="Nombre del titular">
-
-            <input type="text"
-                placeholder="Número de tarjeta">
-
-            <div class="fila">
-
-                <input type="text"
-                    placeholder="MM/AA">
-
-                <input type="text"
-                    placeholder="CVV">
-
-            </div>
-
-            <button class="btn-confirmar"
-                onclick="procesarPago()">
-
-                Confirmar pago
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================
-     FOOTER
-========================= -->
- <footer class="footer">
-
-        <div class="social-container">
-
-            <!-- FACEBOOK -->
-            <a href="#" class="social-btn facebook">
-
-                <i class="fab fa-facebook-f"></i>
-
-                <span>Facebook</span>
-
-            </a>
-
-            <!-- INSTAGRAM -->
-            <a href="#" class="social-btn instagram">
-
-                <i class="fab fa-instagram"></i>
-
-                <span>Instagram</span>
-
-            </a>
-
-            <!-- WHATSAPP -->
-            <a href="#" class="social-btn whatsapp">
-
-                <i class="fab fa-whatsapp"></i>
-
-                <span>WhatsApp</span>
-
-            </a>
-
-        </div>
-
-        <p class="copy">
-            © 2026 TecnoLam
+        <p class="subtitulo">
+            Tus memorias RAM listas para comprar
         </p>
 
-    </footer>
-<!-- =========================
-     SCRIPT
-========================= -->
-<script>
+        <div id="carrito-contenido" class="contenedor-carrito"></div>
 
-    // OBTENER CARRITO
-    let carrito =
-        JSON.parse(
-            localStorage.getItem("carrito")
-        ) || [];
+        <div class="resumen-carrito">
 
-    // ELEMENTOS
-    const carritoContenido =
-        document.getElementById(
-            "carrito-contenido"
-        );
+            <div class="total-box">
 
-    const totalElemento =
-        document.getElementById("total");
+                <h2>Total</h2>
 
-    const contadorElemento =
-        document.getElementById(
-            "contadorCarrito"
-        );
+                <h3>$<span id="total">0</span> MXN</h3>
 
-    // MOSTRAR PRODUCTOS
-    function mostrarCarrito() {
+            </div>
 
-        carritoContenido.innerHTML = "";
+            <div class="botones-carrito">
 
-        let total = 0;
+                <button class="btn-vaciar" onclick="vaciarCarrito()">
+                    <i class="fas fa-trash"></i>
+                    Vaciar carrito
+                </button>
 
-        contadorElemento.textContent =
-            carrito.length;
+                <button class="btn-pagar" onclick="mostrarCheckout()">
+                    <i class="fas fa-credit-card"></i>
+                    Finalizar compra
+                </button>
 
-        // SI ESTA VACIO
-        if(carrito.length === 0){
+            </div>
 
-            carritoContenido.innerHTML = `
+        </div>
 
-                <div class="carrito-vacio">
+        <div id="checkout" class="checkout">
 
-                    <i class="fas fa-cart-shopping"></i>
+            <h2>💳 Pago seguro</h2>
 
-                    <h2>
-                        Tu carrito está vacío
-                    </h2>
+            <div class="formulario">
+
+                <input type="text" placeholder="Nombre del titular">
+                <input type="text" placeholder="Número de tarjeta">
+
+                <div class="fila">
+
+                    <input type="text" placeholder="MM/AA">
+                    <input type="text" placeholder="CVV">
 
                 </div>
 
-            `;
+                <button class="btn-confirmar" onclick="procesarPago()">
+                    Confirmar pago
+                </button>
 
-            totalElemento.textContent = "0";
+            </div>
 
-            return;
-        }
+        </div>
 
-        // RECORRER PRODUCTOS
-        carrito.forEach((producto, index) => {
+    </section>
 
-            total += producto.precio;
+    <!-- FOOTER -->
+    <footer class="footer">
 
-            carritoContenido.innerHTML += `
+        <div class="social-container">
 
-                <div class="producto-carrito">
+            <a href="#" class="social-btn facebook">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+            </a>
 
-                    <img
-                        src="${producto.imagen || 'producto01.jpg'}"
-                        alt="${producto.nombre}">
+            <a href="#" class="social-btn instagram">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
 
-                    <div class="info-producto">
+            <a href="#" class="social-btn whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
 
-                        <h3>
-                            ${producto.nombre}
-                        </h3>
+        </div>
 
-                        <p class="precio">
-                            $${producto.precio}
-                        </p>
+        <p class="copy">© 2026 TecnoLam</p>
 
-                        <div class="acciones">
+    </footer>
 
-                            <button
-                                class="menos"
-                                onclick="eliminarProducto(${index})">
+    <!-- =========================
+         SCRIPT CARRITO
+    ========================== -->
+    <script>
 
-                                -
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-                            </button>
+        const carritoContenido = document.getElementById("carrito-contenido");
+        const totalElemento = document.getElementById("total");
+        const contadorElemento = document.getElementById("contadorCarrito");
 
-                            <button
-                                class="comprar">
+        function mostrarCarrito() {
 
-                                Comprar
+            carritoContenido.innerHTML = "";
 
-                            </button>
+            let total = 0;
 
-                            <button
-                                class="mas"
-                                onclick="duplicarProducto(${index})">
+            contadorElemento.textContent = carrito.length;
 
-                                +
+            if (carrito.length === 0) {
 
-                            </button>
+                carritoContenido.innerHTML = `
+                    <div class="carrito-vacio">
+                        <i class="fas fa-cart-shopping"></i>
+                        <h2>Tu carrito está vacío</h2>
+                    </div>
+                `;
+
+                totalElemento.textContent = "0";
+                return;
+            }
+
+            carrito.forEach((producto, index) => {
+
+                total += producto.precio;
+
+                carritoContenido.innerHTML += `
+                    <div class="producto-carrito">
+
+                        <img src="${producto.imagen || 'producto01.jpg'}">
+
+                        <div class="info-producto">
+
+                            <h3>${producto.nombre}</h3>
+
+                            <p class="precio">$${producto.precio}</p>
+
+                            <div class="acciones">
+
+                                <button class="menos" onclick="eliminarProducto(${index})">-</button>
+
+                                <button class="comprar">Comprar</button>
+
+                                <button class="mas" onclick="duplicarProducto(${index})">+</button>
+
+                            </div>
 
                         </div>
 
                     </div>
+                `;
+            });
 
-                </div>
+            totalElemento.textContent = total.toFixed(2);
+        }
 
-            `;
-        });
+        function eliminarProducto(index) {
+            carrito.splice(index, 1);
+            guardarCarrito();
+        }
 
-        totalElemento.textContent =
-            total.toFixed(2);
+        function duplicarProducto(index) {
+            carrito.push(carrito[index]);
+            guardarCarrito();
+        }
 
-    }
+        function guardarCarrito() {
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            mostrarCarrito();
+        }
 
-    // ELIMINAR
-    function eliminarProducto(index){
+        function vaciarCarrito() {
+            carrito = [];
+            guardarCarrito();
+        }
 
-        carrito.splice(index, 1);
+        function mostrarCheckout() {
+            document.getElementById("checkout").style.display = "block";
+        }
 
-        guardarCarrito();
-
-    }
-
-    // DUPLICAR
-    function duplicarProducto(index){
-
-        carrito.push(carrito[index]);
-
-        guardarCarrito();
-
-    }
-
-    // GUARDAR
-    function guardarCarrito(){
-
-        localStorage.setItem(
-            "carrito",
-            JSON.stringify(carrito)
-        );
+        function procesarPago() {
+            alert("Compra realizada correctamente");
+            vaciarCarrito();
+            document.getElementById("checkout").style.display = "none";
+        }
 
         mostrarCarrito();
 
-    }
+        // MENU HAMBURGUESA
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+        }
 
-    // VACIAR
-    function vaciarCarrito(){
-
-        carrito = [];
-
-        guardarCarrito();
-
-    }
-
-    // MOSTRAR CHECKOUT
-    function mostrarCheckout(){
-
-        document.getElementById(
-            "checkout"
-        ).style.display = "block";
-
-        window.scrollTo({
-
-            top: document.body.scrollHeight,
-
-            behavior: "smooth"
-
-        });
-
-    }
-
-    // PAGO
-    function procesarPago(){
-
-        alert(
-            "✅ Compra realizada correctamente"
-        );
-
-        vaciarCarrito();
-
-        document.getElementById(
-            "checkout"
-        ).style.display = "none";
-
-    }
-
-    // INICIAR
-    mostrarCarrito();
-
-</script>
+    </script>
 
 </body>
 
